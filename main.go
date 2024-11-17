@@ -18,6 +18,8 @@ func main() {
 
 	var bookings []string
 
+	greetUser()
+
 	for {
 		var firstName string
 		var lastName string
@@ -78,4 +80,8 @@ func main() {
 		}
 
 	}
+}
+
+func greetUser() {
+	fmt.Println("Welcome to the Go Conference booking application")
 }
