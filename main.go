@@ -18,7 +18,7 @@ func main() {
 
 	var bookings []string
 
-	greetUser()
+	greetUser(conferenceName, conferenceTickets, remainingTickets)
 
 	for {
 		var firstName string
@@ -82,6 +82,20 @@ func main() {
 	}
 }
 
-func greetUser() {
-	fmt.Println("Welcome to the Go Conference booking application")
+func greetUser(conferenceName string, conferenceTickets uint, remainingTickets uint) {
+	fmt.Printf("Welcome to %v booking application \n", conferenceName)
+	fmt.Printf("We have %v tickets remaining and %v tickets in total \n", remainingTickets, conferenceTickets)
+	fmt.Println("Get your tickets here to attend the conference")
+
+}
+
+func printFirstName(bookings []string) {
+	firstNames := []string{}
+
+	for _, booking := range bookings {
+		var names = strings.Fields(booking)
+		firstNames = append(firstNames, names[0])
+	}
+
+	fmt.Printf("First name of the bookings are: %v \n", firstNames)
 }
